@@ -8,5 +8,6 @@ datasources:
       version: Flux
       organization: my-org
       defaultBucket: Hello
-    editable: true
+    secureJsonData:
+      token: custom-token
     isDefault: true
