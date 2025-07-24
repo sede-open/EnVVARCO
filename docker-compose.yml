@@ -1,0 +1,77 @@
+services:
+  influxdb:
+    build: ./influxdb
+    container_name: influxdb
+    ports:
+      - "8086:8086"
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=admin
+      - DOCKER_INFLUXDB_INIT_PASSWORD=12345678
+      - DOCKER_INFLUXDB_INIT_ORG=my-org
+      - DOCKER_INFLUXDB_INIT_BUCKET=Hello
+      - DOCKER_INFLUXDB_INIT_RETENTION=30d
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=custom-token
+    volumes:
+      - shared_influxdb_token:/token_storage
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8086"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  ntp:
+    build: ./ntp
+    container_name: ntp
+    depends_on:
+      influxdb:
+        condition: service_healthy
+    ports:
+      - "4000:4000"
+    volumes:
+      - shared_influxdb_token:/token_storage
+      - shared_excel_data:/shared_volume
+
+  main:
+    build:
+      context: .
+      dockerfile: main/Dockerfile
+    container_name: main
+    ports:
+      - "4001:4001"
+    volumes:
+      - shared_excel_data:/shared_volume
+
+  envvarco:
+    build:
+      context: .
+      dockerfile: envvarco/Dockerfile
+    container_name: envvarco
+    ports:
+      - "4002:4002"
+    volumes:
+      - shared_excel_data:/shared_volume
+
+  grafana:
+    build: ./grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      influxdb:
+        condition: service_healthy
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - shared_excel_data:/shared_excel_data
+      - shared_influxdb_token:/token_storage
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/dashboards:/var/lib/grafana/dashboards/main
+
+volumes:
+  shared_influxdb_token:
+    name: shared_influxdb_token
+  shared_excel_data:
+    name: shared_excel_data
