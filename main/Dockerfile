@@ -9,5 +9,8 @@ COPY pyvolt /app/main/src/pyvolt
 RUN pip install --no-cache-dir -r /app/main/requirements.txt
 RUN pip install --no-cache-dir /app/main/src/pyvolt/.
 
-# Set the default command to run the script
-CMD ["python", "/app/main/main.py"]
+#For Case1 (Undervoltage condition)
+CMD ["python", "/app/main/Case1.py"]
+
+#For Case2 (Overvoltage condition)
+#CMD ["python", "/app/main/Case2.py"]
