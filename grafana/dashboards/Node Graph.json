@@ -55,7 +55,7 @@
     {
       "datasource": {
         "type": "yesoreyeram-infinity-datasource",
-        "uid": "${DS_INFINITY}"
+        "uid": "DS_INFINITY"
       },
       "gridPos": {
         "h": 18,
@@ -102,7 +102,7 @@
           ],
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
-            "uid": "${DS_INFINITY}"
+            "uid": "DS_INFINITY"
           },
           "filters": [],
           "format": "node-graph-nodes",
@@ -153,7 +153,7 @@
           ],
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
-            "uid": "${DS_INFINITY}"
+            "uid": "DS_INFINITY"
           },
           "filters": [],
           "format": "node-graph-edges",
