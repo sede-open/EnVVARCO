@@ -58,22 +58,9 @@ services:
       - ./network:/app/envvarco/network
       - shared_excel_data:/shared_volume
 
-  grafana-infinity:
-    build: ./grafana-infinity
-    container_name: grafana-infinity
-    ports:
-      - "3001:3000"
-    environment:
-      - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=admin
-    volumes:
-      - ./grafana-infinity/provisioning/datasources:/etc/grafana/provisioning/datasources
-      - ./grafana-infinity/provisioning/dashboards:/etc/grafana/provisioning/dashboards
-      - ./grafana-infinity/dashboards:/var/lib/grafana/dashboards/main
-
-  grafana-influxdb:
-    image: grafana/grafana-oss
-    container_name: grafana-influxdb
+  grafana:
+    build: ./grafana
+    container_name: grafana
     ports:
       - "3000:3000"
     depends_on:
@@ -83,9 +70,11 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
     volumes:
-      - ./grafana-influxdb/provisioning/datasources:/etc/grafana/provisioning/datasources
-      - ./grafana-influxdb/provisioning/dashboards:/etc/grafana/provisioning/dashboards
-      - ./grafana-influxdb/dashboards:/var/lib/grafana/dashboards/main
+      - shared_excel_data:/shared_excel_data
+      - ./influxdb/token:/token_storage
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/dashboards:/var/lib/grafana/dashboards/main
 
 volumes:
   shared_excel_data:
