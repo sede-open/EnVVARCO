@@ -56,7 +56,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "${DS_INFLUXDB}"
+        "uid": "DS_INFLUXDB"
       },
       "fieldConfig": {
         "defaults": {
@@ -146,7 +146,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "${DS_INFLUXDB}"
+            "uid": "DS_INFLUXDB"
           },
           "query": "from(bucket: \"Hello\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"node\")\n  |> filter(fn: (r) => r[\"_field\"] == \"voltage_pu_mag\")\n  |> filter(fn: (r) => r[\"name\"] == \"N0\")\n  |> filter(fn: (r) => r[\"uuid\"] == \"N0\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
           "refId": "A"
@@ -159,7 +159,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "${DS_INFLUXDB}"
+        "uid": "DS_INFLUXDB"
       },
       "fieldConfig": {
         "defaults": {
@@ -249,7 +249,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "${DS_INFLUXDB}"
+            "uid": "DS_INFLUXDB"
           },
           "query": "from(bucket: \"Hello\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"node\")\n  |> filter(fn: (r) => r[\"_field\"] == \"voltage_pu_mag\")\n  |> filter(fn: (r) => r[\"name\"] == \"N1\")\n  |> filter(fn: (r) => r[\"uuid\"] == \"N1\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
           "refId": "A"
@@ -262,7 +262,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "${DS_INFLUXDB}"
+        "uid": "DS_INFLUXDB"
       },
       "fieldConfig": {
         "defaults": {
@@ -352,7 +352,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "${DS_INFLUXDB}"
+            "uid": "DS_INFLUXDB"
           },
           "query": "from(bucket: \"Hello\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"node\")\n  |> filter(fn: (r) => r[\"_field\"] == \"voltage_pu_mag\")\n  |> filter(fn: (r) => r[\"name\"] == \"N2\")\n  |> filter(fn: (r) => r[\"uuid\"] == \"N2\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
           "refId": "A"
@@ -365,7 +365,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "${DS_INFLUXDB}"
+        "uid": "DS_INFLUXDB"
       },
       "fieldConfig": {
         "defaults": {
@@ -455,7 +455,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "${DS_INFLUXDB}"
+            "uid": "DS_INFLUXDB"
           },
           "query": "from(bucket: \"Hello\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"node\")\n  |> filter(fn: (r) => r[\"_field\"] == \"voltage_pu_mag\")\n  |> filter(fn: (r) => r[\"name\"] == \"N3\")\n  |> filter(fn: (r) => r[\"uuid\"] == \"N3\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
           "refId": "A"
@@ -468,7 +468,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "${DS_INFLUXDB}"
+        "uid": "DS_INFLUXDB"
       },
       "fieldConfig": {
         "defaults": {
@@ -558,7 +558,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "${DS_INFLUXDB}"
+            "uid": "DS_INFLUXDB"
           },
           "query": "from(bucket: \"Hello\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"node\")\n  |> filter(fn: (r) => r[\"_field\"] == \"voltage_pu_mag\")\n  |> filter(fn: (r) => r[\"name\"] == \"N4\")\n  |> filter(fn: (r) => r[\"uuid\"] == \"N4\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
           "refId": "A"
@@ -571,7 +571,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "${DS_INFLUXDB}"
+        "uid": "DS_INFLUXDB"
       },
       "fieldConfig": {
         "defaults": {
@@ -661,7 +661,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "${DS_INFLUXDB}"
+            "uid": "DS_INFLUXDB"
           },
           "query": "from(bucket: \"Hello\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"node\")\n  |> filter(fn: (r) => r[\"_field\"] == \"voltage_pu_mag\")\n  |> filter(fn: (r) => r[\"name\"] == \"N5\")\n  |> filter(fn: (r) => r[\"uuid\"] == \"N5\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
           "refId": "A"
@@ -674,7 +674,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "${DS_INFLUXDB}"
+        "uid": "DS_INFLUXDB"
       },
       "fieldConfig": {
         "defaults": {
@@ -764,7 +764,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "${DS_INFLUXDB}"
+            "uid": "DS_INFLUXDB"
           },
           "query": "from(bucket: \"Hello\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"node\")\n  |> filter(fn: (r) => r[\"_field\"] == \"voltage_pu_mag\")\n  |> filter(fn: (r) => r[\"name\"] == \"N6\")\n  |> filter(fn: (r) => r[\"uuid\"] == \"N6\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
           "refId": "A"
@@ -777,7 +777,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "${DS_INFLUXDB}"
+        "uid": "DS_INFLUXDB"
       },
       "fieldConfig": {
         "defaults": {
@@ -867,7 +867,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "${DS_INFLUXDB}"
+            "uid": "DS_INFLUXDB"
           },
           "query": "from(bucket: \"Hello\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"node\")\n  |> filter(fn: (r) => r[\"_field\"] == \"voltage_pu_mag\")\n  |> filter(fn: (r) => r[\"name\"] == \"N7\")\n  |> filter(fn: (r) => r[\"uuid\"] == \"N7\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
           "refId": "A"
@@ -880,7 +880,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "${DS_INFLUXDB}"
+        "uid": "DS_INFLUXDB"
       },
       "fieldConfig": {
         "defaults": {
@@ -970,7 +970,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "${DS_INFLUXDB}"
+            "uid": "DS_INFLUXDB"
           },
           "query": "from(bucket: \"Hello\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"node\")\n  |> filter(fn: (r) => r[\"_field\"] == \"voltage_pu_mag\")\n  |> filter(fn: (r) => r[\"name\"] == \"N8\")\n  |> filter(fn: (r) => r[\"uuid\"] == \"N8\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
           "refId": "A"
@@ -983,7 +983,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "${DS_INFLUXDB}"
+        "uid": "DS_INFLUXDB"
       },
       "fieldConfig": {
         "defaults": {
@@ -1073,7 +1073,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "${DS_INFLUXDB}"
+            "uid": "DS_INFLUXDB"
           },
           "query": "from(bucket: \"Hello\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"node\")\n  |> filter(fn: (r) => r[\"_field\"] == \"voltage_pu_mag\")\n  |> filter(fn: (r) => r[\"name\"] == \"N9\")\n  |> filter(fn: (r) => r[\"uuid\"] == \"N9\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
           "refId": "A"
@@ -1086,7 +1086,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "${DS_INFLUXDB}"
+        "uid": "DS_INFLUXDB"
       },
       "fieldConfig": {
         "defaults": {
@@ -1176,7 +1176,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "${DS_INFLUXDB}"
+            "uid": "DS_INFLUXDB"
           },
           "query": "from(bucket: \"Hello\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"node\")\n  |> filter(fn: (r) => r[\"_field\"] == \"voltage_pu_mag\")\n  |> filter(fn: (r) => r[\"name\"] == \"N10\")\n  |> filter(fn: (r) => r[\"uuid\"] == \"N10\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
           "refId": "A"
@@ -1189,7 +1189,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "${DS_INFLUXDB}"
+        "uid": "DS_INFLUXDB"
       },
       "fieldConfig": {
         "defaults": {
@@ -1279,7 +1279,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "${DS_INFLUXDB}"
+            "uid": "DS_INFLUXDB"
           },
           "query": "from(bucket: \"Hello\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"node\")\n  |> filter(fn: (r) => r[\"_field\"] == \"voltage_pu_mag\")\n  |> filter(fn: (r) => r[\"name\"] == \"N11\")\n  |> filter(fn: (r) => r[\"uuid\"] == \"N11\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
           "refId": "A"
@@ -1292,7 +1292,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "${DS_INFLUXDB}"
+        "uid": "DS_INFLUXDB"
       },
       "fieldConfig": {
         "defaults": {
@@ -1382,7 +1382,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "${DS_INFLUXDB}"
+            "uid": "DS_INFLUXDB"
           },
           "query": "from(bucket: \"Hello\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"node\")\n  |> filter(fn: (r) => r[\"_field\"] == \"voltage_pu_mag\")\n  |> filter(fn: (r) => r[\"name\"] == \"N12\")\n  |> filter(fn: (r) => r[\"uuid\"] == \"N12\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
           "refId": "A"
@@ -1395,7 +1395,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "${DS_INFLUXDB}"
+        "uid": "DS_INFLUXDB"
       },
       "fieldConfig": {
         "defaults": {
@@ -1485,7 +1485,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "${DS_INFLUXDB}"
+            "uid": "DS_INFLUXDB"
           },
           "query": "from(bucket: \"Hello\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"node\")\n  |> filter(fn: (r) => r[\"_field\"] == \"voltage_pu_mag\")\n  |> filter(fn: (r) => r[\"name\"] == \"N13\")\n  |> filter(fn: (r) => r[\"uuid\"] == \"N13\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
           "refId": "A"
@@ -1498,7 +1498,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "${DS_INFLUXDB}"
+        "uid": "DS_INFLUXDB"
       },
       "fieldConfig": {
         "defaults": {
@@ -1588,7 +1588,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "${DS_INFLUXDB}"
+            "uid": "DS_INFLUXDB"
           },
           "query": "from(bucket: \"Hello\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"node\")\n  |> filter(fn: (r) => r[\"_field\"] == \"voltage_pu_mag\")\n  |> filter(fn: (r) => r[\"name\"] == \"N14\")\n  |> filter(fn: (r) => r[\"uuid\"] == \"N14\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
           "refId": "A"
