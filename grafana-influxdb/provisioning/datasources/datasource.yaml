@@ -1,6 +1,7 @@
 apiVersion: 1
 
 datasources:
+  
   - name: influxdb
     type: influxdb
     url: http://influxdb:8086
@@ -10,4 +11,4 @@ datasources:
       defaultBucket: Hello
     secureJsonData:
       token: custom-token
-    isDefault: true
+    isDefault: false
